@@ -1,0 +1,24 @@
+cvm-version: 0.14.12
+cpus: 32
+memory: 524288
+gpus: 1
+
+shim:
+  upstream-container: starter
+  upstream-port: 8080
+  tls-mode: cert-proxy
+
+containers:
+  - name: starter
+    image: docker.io/library/busybox@sha256:1cfa4e2b09e127b9c4ed43578d3f3c18e7d44ea47b9ea98475c0cbe9086525f8
+    restart: always
+    env:
+      - HTTP_PORT: "8080"
+    tmpfs:
+      /srv: "size=64k,mode=0755"
+    command:
+      - /bin/sh
+      - -c
+      - |
+        printf 'confidential-debug-gpu\n' > /srv/index.html
+        exec httpd -f -p "0.0.0.0:$HTTP_PORT" -h /srv
