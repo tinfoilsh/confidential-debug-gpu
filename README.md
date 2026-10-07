@@ -4,7 +4,7 @@ A GPU development variant of [confidential-debug](https://github.com/tinfoilsh/c
 with the Tinfoil shim and a small HTTP starter service. The shim obtains a publicly
 trusted TLS certificate through Tinfoil's certificate proxy and serves
 `confidential-debug-gpu` at the assigned HTTPS domain. The configuration uses CVM
-image `0.14.12`, 32 vCPUs, 512 GiB of memory, and one GPU.
+image `0.14.13`, 32 vCPUs, 512 GiB of memory, and one GPU.
 
 ## Launch in debug mode
 
