@@ -32,7 +32,7 @@ Open the assigned HTTPS domain in a browser or with `curl`. Connect to the debug
 toolbox using the SSH command shown in the dashboard:
 
 ```sh
-ssh -p <port> root@console.tinfoil.sh
+ssh -p <port> root@debug.tinfoil.sh
 ```
 
 ## Develop
